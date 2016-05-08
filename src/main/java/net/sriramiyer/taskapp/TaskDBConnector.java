@@ -1,11 +1,14 @@
 package net.sriramiyer.taskapp;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+@Slf4j
 class TaskDBConnector {
     private String dbURL;
     private Connection databaseConnection;
@@ -25,7 +28,7 @@ class TaskDBConnector {
             try {
                 this.setUpDatabase();
             } catch (Exception e) {
-                System.err.println(e);
+                log.error("Unable to setup database", e);
             }
         }
     }
@@ -35,8 +38,7 @@ class TaskDBConnector {
         try {
             this.databaseConnection = DriverManager.getConnection(dbURLifExists, this.username, this.password);
         } catch (Exception e) {
-            //System.err.println(e);
-            //System.out.println("Generating new database");
+            log.error("Database doesn't exist", e);
         }
         return (this.databaseConnection != null);
     }
