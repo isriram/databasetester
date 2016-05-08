@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-
-public class testTasksDatabase {
+public class TaskDBConnectorTest {
     @Test
     public void shouldCheckIfDBExists() {
         TaskDBConnector taskDBConnector = new TaskDBConnector();

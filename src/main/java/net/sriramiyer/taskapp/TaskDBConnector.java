@@ -125,8 +125,7 @@ class TaskDBConnector {
             return task;
         }
         else {
-            Task returnTask = new Task(-1, "", false);
-            return returnTask;
+            return new Task(-1, "", false);
         }
     }
 

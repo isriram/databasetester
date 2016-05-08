@@ -5,21 +5,14 @@ class Task {
     private String taskName;
     private boolean completedStatus;
 
-    public Task(int id, String taskName, boolean completedStatus) {
+    Task(int id, String taskName, boolean completedStatus) {
         this.id = id;
         this.taskName = taskName;
         this.completedStatus = completedStatus;
     }
 
-    public Task(String taskName, boolean completedStatus) {
-        this(-1, taskName, completedStatus);
-    }
-
-    public Task(String taskName) {
+    Task(String taskName) {
         this(-1, taskName, false);
-    }
-
-    public Task() {
     }
 
     void setTaskName(String taskName) {
@@ -59,7 +52,7 @@ class Task {
         return this.taskName;
     }
 
-    public int getId() {
+    int getId() {
         return this.id;
     }
 }
